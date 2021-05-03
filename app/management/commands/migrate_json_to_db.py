@@ -25,7 +25,7 @@ class Command(BaseCommand):
         path = os.path.join(proj_loc, 'sample_data.json')
         file_obj = open(path, 'r')
         data = json.loads(file_obj.read())
-        for record in data[:5]:
+        for record in data:
             upload_data_to_db(record)
         file_obj.close()
         print('migrating json to db success')
